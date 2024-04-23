@@ -16,7 +16,7 @@ openai_ef = embedding_functions.OpenAIEmbeddingFunction(
 client = chromadb.PersistentClient(path="DB")
 collection = client.get_collection("recycling",embedding_function=openai_ef)
 
-prompt = input('prompt: ')
+prompt = input('사용자 입력: ')
 
 vector = text_embedding(prompt)
 
@@ -32,7 +32,8 @@ sys_prompt = f'''
 너는 재활용 전문가로 활동하고 있어.
 사람들이 재활용 방법을 물어보면 너는 주어진 Context를 바탕으로 짧게 요약해서 중요한 정보만 답해줘야해.
 
-Context: {res}
+Context:
+{res}
 '''
 
 messages = [
@@ -42,9 +43,9 @@ messages = [
 response = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
     messages=messages,
-    temperature=0
+    temperature=0.2
 )
 response_message = response["choices"][0]["message"]["content"]
 
-print('\n')
-print(response_message)
+print('\n[PROMPT]',sys_prompt)
+print('\n[CHATBOT]\n',response_message)
