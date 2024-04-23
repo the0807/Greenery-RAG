@@ -43,7 +43,7 @@ messages = [
 response = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
     messages=messages,
-    temperature=0.2
+    temperature=0.1
 )
 response_message = response["choices"][0]["message"]["content"]
 
