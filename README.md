@@ -5,6 +5,8 @@ More info about project: [Greenery](https://github.com/bkk21/Greenery)
 
 ## Use
 - ChromaDB
+- ollama
+- hugging face (Text Embedding Model, LLM)
 - ChatGPT
 
 ## Result
