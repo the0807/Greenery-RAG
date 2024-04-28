@@ -6,6 +6,7 @@ import config
 
 def text_embedding(text):
     response = openai.Embedding.create(model="text-embedding-ada-002", input = text)
+    print(response["data"][0]["embedding"])
     return response["data"][0]["embedding"]
  
 openai_ef = embedding_functions.OpenAIEmbeddingFunction(
