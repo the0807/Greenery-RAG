@@ -6,8 +6,7 @@ import config
  
 huggingface_ef = embedding_functions.HuggingFaceEmbeddingFunction(
     api_key=config.API['hugging_face'],
-    model_name="bespin-global/klue-sroberta-base-continue-learning-by-mnr"
-    #model_name="jhgan/ko-sbert-sts"
+    model_name="BAAI/bge-m3"
 )
 
 client = chromadb.PersistentClient(path="DB_recycling")
@@ -24,7 +23,7 @@ res = "\n".join(str(item) for item in results['documents'][0])
 
 sys_prompt = f'''
 너는 재활용 전문가로 활동하고 있어.
-주어진 Prompt 질문에 대한 대답을 Context를 바탕으로 짧게 요약해서 말해줘.
+주어진 Prompt 질문에 대한 대답을 Context를 바탕으로 짧게 요약해서 설명해줘.
 
 Prompt:
 {prompt}
@@ -34,7 +33,7 @@ Context:
 '''
 
 output = ollama.generate(
-  model="Llama3_ko",
+  model="Synatra",
   prompt=sys_prompt
 )
 

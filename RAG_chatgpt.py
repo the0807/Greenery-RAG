@@ -41,6 +41,7 @@ messages = [
         {"role": "system", "content": sys_prompt},
         {"role": "user", "content": prompt}
 ]
+
 response = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
     messages=messages,
