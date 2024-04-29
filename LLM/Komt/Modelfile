@@ -1,0 +1,1 @@
+FROM ./ggml-model-q5_k_m.gguf

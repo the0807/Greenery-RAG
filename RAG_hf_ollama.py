@@ -22,18 +22,19 @@ results = collection.query(
 res = "\n".join(str(item) for item in results['documents'][0])
 
 sys_prompt = f'''
-너는 재활용 전문가로 활동하고 있어.
-주어진 Prompt 질문에 대한 대답을 Context를 바탕으로 짧게 요약해서 설명해줘.
-
 Prompt:
 {prompt}
 
 Context:
 {res}
+
+
+너는 재활용 전문가로 활동하고 있어.
+주어진 Prompt 질문에 대한 대답을 Context를 바탕으로 100글자 내로 짧게 요약해서 얘기해줘.
 '''
 
 output = ollama.generate(
-  model="Synatra",
+  model="EEVE",
   prompt=sys_prompt
 )
 
