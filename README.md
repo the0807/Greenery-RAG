@@ -8,7 +8,8 @@ More info about project: [Greenery](https://github.com/bkk21/Greenery)
 - ollama
 - hugging face (Text Embedding Model, LLM)
 - ChatGPT
-*ChatGPT버전, LLM(Llama3_ko, EEVE 등) 여러 버전 사용 가능
+
+\* ChatGPT, LLM(Llama3_ko, EEVE 등) 여러 버전 사용 가능
 
 ## Result
 <img width="1037" alt="RAG1" src="https://github.com/the0807/Greenery-RAG/assets/73097985/7bb9f1f3-1c12-4b92-92f7-795e2ac7ca03">
