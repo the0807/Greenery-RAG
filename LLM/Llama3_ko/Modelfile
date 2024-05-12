@@ -1,1 +1,1 @@
-FROM ./Llama-3-Open-Ko-8B-Q6_K.gguf
+FROM ./KoLlama-3-8B-Instruct.Q5_K_M.gguf
